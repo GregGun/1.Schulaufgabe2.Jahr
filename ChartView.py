@@ -10,7 +10,7 @@ class ChartView(QChartView):
 
         # Achsen erstellen + Format für Datum setzen + beschriften (Datum)
         self.date_axis = QDateTimeAxis()
-        self.date_axis.setFormat("MMMM.yyyy")
+        self.date_axis.setFormat("MMM.yyyy")
         self.date_axis.setTitleText("Jahr")
         self.date_axis.setGridLineColor(QColor("blue"))
 
@@ -51,7 +51,7 @@ class ChartView(QChartView):
         self.series.append(QDateTime(2030, 2, 10, 0, 0).toMSecsSinceEpoch(), 3.5)
         self.series.append(QDateTime(2032, 2, 10, 0, 0).toMSecsSinceEpoch(), 7.5)
 
-        # dem chart hinzufügen + Series den Axen zufügen + Name setzen
+        # dem chart hinzufügen + Series den Achsen zufügen + Name setzen
         self.chart.addSeries(self.series)
         self.series.attachAxis(self.date_axis)
         self.series.attachAxis(self.value_axis)
